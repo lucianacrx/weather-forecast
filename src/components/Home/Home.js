@@ -1,21 +1,26 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-import useFetch from '../../hooks/useFetch.js';
+import useFetchWeather from '../../hooks/useFetchWeather.js';
 import Day from '../Day/Day.js';
 
 import styles from './Home.module.css';
 
 const Home = () => {
-    const results = useFetch("https://api.openweathermap.org/data/2.5/forecast?q=Santiago&units=metric&appid=c974f712cfab72f32983c073239c2ebf", {});
-
+    const results = useFetchWeather("https://api.openweathermap.org/data/2.5/forecast?q=Santiago&units=metric&appid=c974f712cfab72f32983c073239c2ebf", {});
+    console.log(results);
     return (
-        <div className="container">
+        <div className={`container ${styles.mainContainer}`}>
             <h1 className={styles.santiagoTitle}>Santiago, Chile</h1>
-            <div className="d-flex flex-row flex-wrap">
+            <hr className={styles.hrLine} />
+            <div className="d-flex flex-row flex-wrap justify-content-center">
                 {
-                    results.response && results.response.days.map((item) => (
-                        <Day key={item.date} avgTemp={item.temp.avg} maxTemp={item.temp.max} 
-                             minTemp={item.temp.min} date={item.date}></Day>
+                    results.mappedDays && results.fullDaysData && results.mappedDays.map((item) => (
+                        <Link className={styles.dayItem} key={item.id}
+                        to={{ pathname: `/${item.id}`, state: { item: results.fullDaysData[0] } }} >
+                            <Day avgTemp={item.temp.avg} maxTemp={item.temp.max} 
+                             minTemp={item.temp.min} date={item.date} icon={item.iconClass}></Day>
+                        </Link>
                     ))
                 }  
             </div>

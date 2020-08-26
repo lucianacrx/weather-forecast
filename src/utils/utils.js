@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+import { icons } from '../icons/icons.js';
+
 export function formatDate(date) {
     if (date && moment(date).isValid()) {
       return moment.unix(date).utc().format('ddd D MMMM');
@@ -19,3 +21,7 @@ export function getNextDays(date) {
     
     return nextDates;
 };
+
+export function getIcon(icon) {
+    return icons[icon];
+}
