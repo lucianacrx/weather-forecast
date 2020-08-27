@@ -31,7 +31,7 @@ const LineChartDetail = ({ data = [] }) => {
     return (
       <svg className={styles.content} viewBox="0, 0, 900, 500">
         <Group top={25} left={65}>
-          <AxisLeft scale={yScale} numTicks={5} label="Average Temperature" />
+          <AxisLeft scale={yScale} numTicks={5} label="Average Temperature in °C" />
           <AxisBottom scale={xScale} label="Day" labelOffset={15} numTicks={5} top={yMax} />
           {data.map((point, pointIndex) => (
             <circle
