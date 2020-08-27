@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 import styles from './Detail.module.css';
 
@@ -22,6 +23,11 @@ const DetailContainer = (props) => {
                                     time={getHourFromUnixTime(data.dt)}></Day>
                                 ))
                             }
+                        </div>
+                        <div>
+                            <Link to="/">
+                                <button type="button" className={`btn btn-primary ${styles.goBackButton}`}>Go Back</button>
+                            </Link>
                         </div>
                     </div>
                 : null
