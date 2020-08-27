@@ -72,9 +72,7 @@ function getDaysData(data) {
         const fullDay = {};
         fullDay.id = index + 1;
         fullDay.date = formatDate(dayData[0].dt);
-        fullDay.values = Object.keys(dayData).map(key => {
-          return data[key];
-        })
+        fullDay.values = dayData;
         fullDaysData.push(fullDay);
     }
   });

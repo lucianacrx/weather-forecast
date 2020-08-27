@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import useFetchWeather from '../../hooks/useFetchWeather.js';
 import Day from '../Day/Day.js';
-import LineChart from '../LineChart/LineChart.js';
+import LineChartHome from '../LineChart/LineChartHome.js';
 
 import styles from './Home.module.css';
 
@@ -28,8 +28,8 @@ const Home = () => {
             <div className="d-flex flex-row flex-wrap justify-content-center">
                 {
                     results.mappedDays ? 
-                    <div style={{ width: "80vw", height: "50vw" }}>
-                        <LineChart data={results.mappedDays} />
+                    <div>
+                        <LineChartHome data={results.mappedDays}/>
                     </div> : null
                 }
             </div>
