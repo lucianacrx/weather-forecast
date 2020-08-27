@@ -5,6 +5,8 @@ import { AxisLeft, AxisBottom } from "@vx/axis";
 import { LinePath } from "@vx/shape";
 import { curveLinear } from "@vx/curve";
 
+import styles from "./LineChart.module.css";
+
 const height = 500;
 const width = 800;
 
@@ -27,7 +29,7 @@ const LineChartDetail = ({ data = [] }) => {
     })
 
     return (
-      <svg width={width} height={height}>
+      <svg className={styles.content} viewBox="0, 0, 900, 500">
         <Group top={25} left={65}>
           <AxisLeft scale={yScale} numTicks={5} label="Average Temperature" />
           <AxisBottom scale={xScale} label="Day" labelOffset={15} numTicks={5} top={yMax} />

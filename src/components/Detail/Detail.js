@@ -28,7 +28,7 @@ const Detail = (props) => {
                         <div className="d-flex flex-row flex-wrap justify-content-center">
                             {
                                 item.values ? 
-                                <div>
+                                <div className={styles.svgBox}>
                                     <LineChartDetail data={item.values} />
                                 </div> : null
                             }

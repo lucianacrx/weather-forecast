@@ -1,0 +1,17 @@
+.content {
+    position: absolute;
+    top: 0;
+    left: 130px;
+}
+
+@media screen and (max-width: 950px) {
+    .content {
+        left: 65px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        left: 20px;
+    }
+}

@@ -41,6 +41,12 @@
   flex-basis: 25%;
 }
 
+@media screen and (max-width: 991px) {
+  .dayItem {
+    flex-basis: auto;
+  }
+}
+
 .hrLine {
   height:1px;
   color:black;

@@ -28,7 +28,7 @@ const Home = () => {
             <div className="d-flex flex-row flex-wrap justify-content-center">
                 {
                     results.mappedDays ? 
-                    <div>
+                    <div className={styles.svgBox}>
                         <LineChartHome data={results.mappedDays}/>
                     </div> : null
                 }
