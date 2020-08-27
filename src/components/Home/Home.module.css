@@ -3,13 +3,6 @@
     padding-top: 20px;
 }
 
-.hrLine {
-    height:1px;
-    color:black;
-    background-color:black;
-    width: 80%;
-}
-
 .dayItem {
     color: black;
     text-decoration: none;

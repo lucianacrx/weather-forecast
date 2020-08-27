@@ -49,8 +49,9 @@ function getDaysData(data) {
         var icon = "";
         // Se toma como referencia un punto medio en el día, si solo existe un registro (por la hora) se toma ese.
         if (dayData.length/2 >= 1) {
-          dayMapped.description = dayData[dayData.length/2].weather[0].description;
-          icon = dayData[dayData.length/2].weather[0].icon;
+          const middleIndex = Math.floor(dayData.length/2);
+          dayMapped.description = dayData[middleIndex].weather[0].description;
+          icon = dayData[middleIndex].weather[0].icon;
         } else {
           dayMapped.description = dayData[0].weather[0].description;
           icon = dayData[0].weather[0].icon;
@@ -68,8 +69,12 @@ function getDaysData(data) {
         // Days mapped contiene la data con los calculos necesarios para el avg requerido
         // FullDays se utilizará para no tener que realizar otra consulta al ver el detalle de un día
         daysMapped.push(dayMapped);
-        const fullDay = {...dayData};
+        const fullDay = {};
         fullDay.id = index + 1;
+        fullDay.date = formatDate(dayData[0].dt);
+        fullDay.values = Object.keys(dayData).map(key => {
+          return data[key];
+        })
         fullDaysData.push(fullDay);
     }
   });

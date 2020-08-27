@@ -1,4 +1,10 @@
 .detailContainer {
     width: 90%;
     background-color: white;
+    border-radius: 25px;
+}
+
+.dateTitle {
+    text-align: center;
+    padding-top: 20px;
 }

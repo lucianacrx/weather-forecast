@@ -9,6 +9,13 @@ export function formatDate(date) {
     return '';
 }
 
+export function getHourFromUnixTime(date) {
+    if (date && moment(date).isValid()) {
+        return moment.unix(date).utc().format('HH:mm');
+    }
+    return '';
+}
+
 export function getNextDays(date) {
     var nextDates = [];
     var nextDay = "";

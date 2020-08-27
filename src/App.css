@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.dayItem {
+  flex-basis: 25%;
+}
+
+.hrLine {
+  height:1px;
+  color:black;
+  background-color:black;
+  width: 80%;
+}
