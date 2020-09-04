@@ -33,11 +33,9 @@ const Detail = (props) => {
                                 </div> : null
                             }
                         </div>
-                        <div>
-                            <Link to="/">
-                                <button type="button" className={`btn btn-primary ${styles.goBackButton}`}>Go Back</button>
-                            </Link>
-                        </div>
+                        <Link to="/">
+                            <button type="button" className={`btn btn-primary ${styles.goBackButton}`}>Go Back</button>
+                        </Link>
                     </div>
                 : null
             }

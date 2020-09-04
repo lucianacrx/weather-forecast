@@ -18,7 +18,7 @@ const Home = () => {
                 {
                     results.mappedDays && results.fullDaysData && results.mappedDays.map((item) => (
                         <Link className={styles.dayItem} key={item.id}
-                        to={{ pathname: `/${item.id}`, state: { item: results.fullDaysData.find(p => p.id === item.id) } }} >
+                        to={{ pathname: `/${item.day}`, state: { item: results.fullDaysData.find(p => p.id === item.id) } }} >
                             <Day avgTemp={item.temp.avg} maxTemp={item.temp.max} 
                              minTemp={item.temp.min} date={item.date} icon={item.iconClass}></Day>
                         </Link>

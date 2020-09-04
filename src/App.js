@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/:id" exact component={Detail} />
+        <Route path="/:day" exact component={Detail} />
       </Switch>
     </Router>
   );

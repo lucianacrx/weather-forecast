@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { formatDate, getNextDays, getIcon } from '../utils/utils.js';
+import { formatDate, getNextDays, getIcon, getWeekDay } from '../utils/utils.js';
 
 const useFetchWeather = (url, options) => {
     const [mappedDays, setMappedDays] = useState(null);
@@ -46,6 +46,7 @@ function getDaysData(data) {
         var dayMapped = {};
         dayMapped.id = index + 1;
         dayMapped.date = formatDate(dayData[0].dt);
+        dayMapped.day = getWeekDay(new Date(dayMapped.date)).toLowerCase();
         var icon = "";
         // Se toma como referencia un punto medio en el día, si solo existe un registro (por la hora) se toma ese.
         if (dayData.length/2 >= 1) {

@@ -9,6 +9,13 @@ export function formatDate(date) {
     return '';
 }
 
+export function getWeekDay(date) {
+    if (date && moment(date).isValid()) {
+        return moment(date).format('dddd');
+    }
+    return '';
+}
+
 export function getHourFromUnixTime(date) {
     if (date && moment(date).isValid()) {
         return moment.unix(date).utc().format('HH:mm');
