@@ -11,7 +11,7 @@ export function formatDate(date) {
 
 export function getWeekDay(date) {
     if (date && moment(date).isValid()) {
-        return moment(date).format('dddd');
+        return moment.unix(date).utc().format('dddd');
     }
     return '';
 }

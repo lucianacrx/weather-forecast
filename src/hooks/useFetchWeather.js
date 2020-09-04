@@ -46,7 +46,7 @@ function getDaysData(data) {
         var dayMapped = {};
         dayMapped.id = index + 1;
         dayMapped.date = formatDate(dayData[0].dt);
-        dayMapped.day = getWeekDay(new Date(dayMapped.date)).toLowerCase();
+        dayMapped.day = getWeekDay(dayData[0].dt).toLowerCase();
         var icon = "";
         // Se toma como referencia un punto medio en el día, si solo existe un registro (por la hora) se toma ese.
         if (dayData.length/2 >= 1) {
